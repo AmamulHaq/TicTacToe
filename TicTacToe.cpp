@@ -121,6 +121,7 @@ int main() {
         if (value[row][col] != 'X' && value[row][col] != 'O') {
             value[row][col] = turn;
             if (checkWin()) {
+                display();
                 break;
             } else if (checkDraw()) {
                 cout << "\nThe game is a draw." << endl;
