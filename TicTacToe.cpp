@@ -74,12 +74,14 @@ bool checkWin() {
         // Check rows
         if (value[i][0] == value[i][1] && value[i][0] == value[i][2]) {
             win = value[i][0]; 
+            display();
             cout << "Player " << win << " wins!" << endl;
             return true;
         }
         // Check columns
         if (value[0][i] == value[1][i] && value[0][i] == value[2][i]) {
             win = value[0][i]; 
+            display();
             cout << "Player " << win << " wins!" << endl;
             return true;
         }
@@ -88,12 +90,14 @@ bool checkWin() {
     // Check diagonals
     if (value[0][0] == value[1][1] && value[0][0] == value[2][2]) {
         win = value[0][0]; 
+        display();
         cout << "Player " << win << " wins!" << endl;
         return true;
     }
    // Check diagonals
     if (value[0][2] == value[1][1] && value[0][2] == value[2][0]) {
-        win = value[0][2]; 
+        win = value[0][2];
+		display(); 
         cout << "Player " << win << " wins!" << endl;
         return true;
     }
@@ -121,9 +125,10 @@ int main() {
         if (value[row][col] != 'X' && value[row][col] != 'O') {
             value[row][col] = turn;
             if (checkWin()) {
-                display();
+            
                 break;
             } else if (checkDraw()) {
+            	display();
                 cout << "\nThe game is a draw." << endl;
                 break;
             } else {
