@@ -1,5 +1,6 @@
 #include <iostream>
 //tic tac toe in cpp
+//number indexing 
 #include <string>
 using namespace std;
 
